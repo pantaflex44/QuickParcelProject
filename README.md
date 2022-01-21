@@ -1,6 +1,6 @@
-# QuickParcelProject with React
+# QuickParcelProject with Parcel, Sass, React and Jest
 
-Create a project with Parcel, Sass, and React quickly.
+Create a project with Parcel, Sass, React and Jest quickly.
 
 ## Get package
 
@@ -24,6 +24,7 @@ npx parcel build index.html
 ## Author and Copyright
 
 Christophe LEMOINE
+
 pantaflex at tuta point io
 
 Licence: MIT
