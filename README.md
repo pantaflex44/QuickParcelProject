@@ -14,25 +14,25 @@ First install and run server
 
 ```bash
 npm install
-npx parcel index.html
+npm run start
 ```
 
 Build package for production
 
 ```bash
-npx parcel build index.html
+npm run build
 ```
 
 Run tests with Jest
 
 ```bash
-npx jest
+npm run test
 ```
 
 Watch all changes and run tests imediately
 
 ```bash
-npx jest --watchAll
+npm run test-watch
 ```
 
 ## Author and Copyright
