@@ -14,25 +14,25 @@ First install and run server
 
 ```bash
 npm install
-npm run start
+yarn run dev
 ```
 
 Build package for production
 
 ```bash
-npm run build
+yarn run build
 ```
 
 Run tests with Jest
 
 ```bash
-npm run test
+yarn run test
 ```
 
 Watch all changes and run tests imediately
 
 ```bash
-npm run test-watch
+yarn run test-watch
 ```
 
 ## Author and Copyright

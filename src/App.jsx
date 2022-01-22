@@ -2,7 +2,7 @@ import React from "react";
 
 import { wait } from "./js/functions";
 
-import styles from "./styles/App.module.scss";
+import * as styles from "./styles/App.module.scss";
 
 export default function App() {
     return (
