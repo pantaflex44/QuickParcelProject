@@ -2,7 +2,7 @@ import React, { StrictMode } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import "./src/styles/_reset.scss";
+import "./src/css/_reset.scss";
 
 import App from "./src/App";
 import { Error404 } from "./src/Errors";

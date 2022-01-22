@@ -7,11 +7,13 @@
   "author": "Christophe LEMOINE",
   "license": "MIT",
   "dependencies": {
+    "connect": "^3.7.0",
     "parcel": "^2.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
-    "sass": "^1.48.0"
+    "sass": "^1.48.0",
+    "serve-static": "^1.14.2"
   },
   "devDependencies": {
     "@babel/core": "^7.16.10",
@@ -28,17 +30,20 @@
     "babel-jest": "^27.4.6",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.7",
+    "lodash.escaperegexp": "^4.1.2",
     "react-scripts": "^5.0.0",
-    "react-test-renderer": "^17.0.2"
+    "react-test-renderer": "^17.0.2",
+    "replace-in-file": "^6.3.2"
   },
   "scripts": {
-    "dev:parcel": "NODE_ENV=development parcel index.html --open",
-    "build:parcel": "NODE_ENV=production parcel build index.html --public-url ./ --no-source-maps",
+    "dev:parcel": "NODE_ENV=development parcel index.html --open --dist-dir dist",
+    "build:parcel": "NODE_ENV=production parcel build index.html --public-url ./ --dist-dir dist --no-source-maps && node postbuild.js",
     "dev": "npm run clean && npm run dev:parcel",
     "build": "npm run clean && npm run build:parcel",
     "test": "jest",
     "test-watch": "jest --watchAll",
-    "clean": "rm -rf dist/*"
+    "clean": "rm -rf dist/* && rm -rf public/*",
+    "serve": "node serve.js"
   },
   "postcss": {
     "modules": false,
@@ -48,4 +53,5 @@
       }
     }
   }
+  
 }
