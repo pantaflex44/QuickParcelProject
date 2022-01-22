@@ -17,6 +17,7 @@
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@parcel/babel-preset-env": "^2.2.1",
     "@parcel/transformer-sass": "^2.2.0",
     "@testing-library/dom": "^8.11.2",
     "@testing-library/jest-dom": "^5.16.1",
