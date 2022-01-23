@@ -30,19 +30,23 @@
     "babel-jest": "^27.4.6",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.7",
+    "jest-transform-stub": "^2.0.0",
     "lodash.escaperegexp": "^4.1.2",
     "react-scripts": "^5.0.0",
     "react-test-renderer": "^17.0.2",
     "replace-in-file": "^6.3.2"
   },
   "scripts": {
-    "dev:parcel": "NODE_ENV=development parcel index.html --open --dist-dir dist",
-    "build:parcel": "NODE_ENV=production parcel build index.html --public-url ./ --dist-dir dist --no-source-maps && node postbuild.js",
-    "dev": "npm run clean && npm run dev:parcel",
-    "build": "npm run clean && npm run build:parcel",
+    "dev:clean": "rm -rf pre-dist/*",
+    "dev:parcel": "NODE_ENV=development parcel ./src/index.html --open --dist-dir ./pre-dist",
+    "build:clean": "rm -rf dist/*",
+    "build:parcel": "NODE_ENV=production parcel build ./src/index.html --public-url ./ --dist-dir ./dist --no-source-maps && node ./postbuild.js",
+    "clean" : "npm run dev:clean && npm run build:clean",
+    "dev": "npm run dev:clean && npm run dev:parcel",
+    "build": "npm run build:clean && npm run build:parcel",
     "test": "jest",
     "test-watch": "jest --watchAll",
-    "clean": "rm -rf dist/* && rm -rf public/*",
+    
     "serve": "node serve.js"
   },
   "postcss": {
@@ -52,6 +56,23 @@
         "flexbox": "no-2009"
       }
     }
+  },
+  "babel": {
+    "presets": ["@parcel/babel-preset-env", "@babel/preset-react"]
+  },
+  "jest": {
+    "verbose": true,
+    "clearMocks": true,
+    "coverageDirectory": "coverage",
+    "testEnvironment": "jsdom",
+    "transform": {
+        "^.+\\.jsx?$": "babel-jest"
+    },
+    "setupFilesAfterEnv": ["./tests.config.js"],
+    "moduleNameMapper": {
+        "\\.(css|less|scss)$": "jest-transform-stub",
+        "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+            "jest-transform-stub"
+    }
   }
-  
 }

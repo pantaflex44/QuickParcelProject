@@ -3,7 +3,6 @@ import React from "react";
 import { wait } from "./js/functions";
 
 import * as styles from "./css/App.module.scss";
-
 import QuickParcelProjectLogo from "../assets/QuickParcelProject.png";
 
 export default function App() {

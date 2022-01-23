@@ -1,4 +1,4 @@
 .parcel-cache
-dist
-public
 node_modules
+pre-dist
+dist

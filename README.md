@@ -49,7 +49,9 @@ Default browser automaticaly opened to http://localhost:1234. Hot reload activat
 ```bash
 npm run build
 ```
-'dist' folder automaticaly cleaned and new versionned files built. Your React app is ready to use with an external server (because a React router is used in the 'index.jsx').
+'dist' folder automaticaly cleaned and new versionned files built. Your React app is ready to use with an external server (because a React router is used in the 'main.jsx').
+
+'dist' folder now contains your app to deploy.
 
 ### Test your Parcel's built files
 
@@ -78,6 +80,15 @@ npm run test-watch
 ```bash
 npm run clean
 ```
+
+### Entry point
+
+The main entry point is **index.html**.
+
+**main.jsx** and the **src** folder aren't necessary, only for this sample.
+**JSX** extension isn't mandatory, you could use **JS** too.
+
+Free of use!
 
 ## Author and Copyright
 

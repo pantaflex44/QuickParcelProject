@@ -2,10 +2,10 @@ import React, { StrictMode } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import "./src/css/_reset.scss";
+import "./css/_reset.scss";
 
-import App from "./src/App";
-import { Error404 } from "./src/Errors";
+import App from "./App";
+import { Error404 } from "./Errors";
 
 const currentLocation = window.location.pathname;
 const currentPath =
