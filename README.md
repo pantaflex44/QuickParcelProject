@@ -1,7 +1,7 @@
 # QuickParcelProject with Parcel, Sass, React and Jest
 
 Create a project with Parcel, Sass, React and Jest quickly.<br />
-*Version **2.0.0***
+*Version **2.1.0***
 
 ## Get QuickParcelProject
 
