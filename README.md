@@ -1,5 +1,14 @@
 # QuickParcelProject with Parcel, Sass, React and Jest
 
+![GitHub version](https://img.shields.io/github/package-json/v/pantaflex44/QuickParcelProject)
+![GitHub last commit](https://img.shields.io/github/last-commit/pantaflex44/QuickParcelProject)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/pantaflex44/QuickParcelProject)
+
+
+![GitHub release](https://img.shields.io/github/downloads/pantaflex44/QuickParcelProject/total)
+![GitHub license](https://img.shields.io/github/license/pantaflex44/QuickParcelProject)
+![GitHub stars](https://img.shields.io/github/stars/pantaflex44/QuickParcelProject)
+
 Create a project with Parcel, Sass, React and Jest quickly.<br />
 *Version **2.1.0***
 
