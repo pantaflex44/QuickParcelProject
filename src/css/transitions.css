@@ -1,0 +1,23 @@
+.pageTransition-enter, .pageTransition-exit {
+    transition: all 250ms ease-in-out;
+}
+.pageTransition-enter {
+    opacity: 0.5;
+    transform: scale(0);
+}
+.pageTransition-enter.pageTransition-enter-active {
+    opacity: 1;
+    transform: scale(1);
+}
+.pageTransition-exit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.5;
+    transform: scale(0.5);
+}
+.pageTransition-exit-active {
+    opacity: 0.5;
+    transform: scale(0);
+}

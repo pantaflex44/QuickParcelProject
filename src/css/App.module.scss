@@ -1,9 +1,29 @@
+
+
+.mainMenu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li {
+        margin: 0 1em;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 .home, .alert {
     position: relative;
     display: grid;
     place-items: center;
-    width: 100%vw;
-    height: 100vh;
+    width: 100vw;
+    height: 70vh;
     font-family: sans-serif;
     font-size: 1em;
 }

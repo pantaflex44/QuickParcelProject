@@ -10,7 +10,6 @@
 ![GitHub stars](https://img.shields.io/github/stars/pantaflex44/QuickParcelProject)
 
 Create a project with Parcel, Sass, React and Jest quickly.<br />
-*Version **2.1.0***
 
 ## Get QuickParcelProject
 
