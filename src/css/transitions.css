@@ -1,23 +1,25 @@
-.pageTransition-enter, .pageTransition-exit {
-    transition: all 250ms ease-in-out;
+.container {
+    position: relative;
+    overflow: hidden;
 }
-.pageTransition-enter {
-    opacity: 0.5;
+.page {
+    position: absolute;
+}
+.page-enter {
+    opacity: 0;
     transform: scale(0);
 }
-.pageTransition-enter.pageTransition-enter-active {
+.page-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 250ms, transform 250ms;
+}
+.page-exit {
     opacity: 1;
     transform: scale(1);
 }
-.pageTransition-exit {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0.5;
-    transform: scale(0.5);
-}
-.pageTransition-exit-active {
-    opacity: 0.5;
+.page-exit-active {
+    opacity: 0;
     transform: scale(0);
+    transition: opacity 250ms, transform 250ms;
 }

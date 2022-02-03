@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
 import * as styles from "../css/App.module.scss";
 
@@ -8,10 +8,25 @@ export default function MainMenu() {
         <nav>
             <ul className={styles.mainMenu}>
                 <li>
-                    <Link to="/">Accueil</Link>
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            isActive ? styles.currentNavlink : styles.navlink
+                        }
+                    >
+                        Accueil
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/about">A propos de...</Link>
+                    <NavLink
+                        to="/about"
+                        className={({ isActive }) =>
+                            isActive ? styles.currentNavlink : styles.navlink
+                        }
+                        end
+                    >
+                        A propos de...
+                    </NavLink>
                 </li>
             </ul>
         </nav>
