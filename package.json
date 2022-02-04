@@ -1,6 +1,6 @@
 {
   "name": "quick-parcel-project",
-  "version": "2.2.9",
+  "version": "2.3.0",
   "description": "Quick parcel project package",
   "default": "index.html",
   "repository": "https://github.com/pantaflex44/QuickParcelProject",
