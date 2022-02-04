@@ -9,9 +9,9 @@ export default function About() {
 
     return useMemo(() => {
         return (
-            <>
+            <div className="page" style={{ marginTop: "3em" }}>
                 <h1 className={styles.title}>A propos de ...</h1>
-            </>
+            </div>
         );
     }, [Page]);
 }

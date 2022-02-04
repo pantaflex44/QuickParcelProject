@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
+import "./css/_app.scss";
 import * as styles from "./css/App.module.scss";
-import "./css/transitions.css";
 
 import Layout from "./components/Layout";
 import Index from "./pages/Index";

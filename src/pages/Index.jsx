@@ -10,7 +10,7 @@ export default function Index() {
 
     return useMemo(() => {
         return (
-            <>
+            <div className="page" style={{ marginTop: "3em" }}>
                 <h1 className={styles.title}>
                     <img
                         src={QuickParcelProjectLogo}
@@ -18,7 +18,16 @@ export default function Index() {
                     />
                     QuickParcelProject with Parcel, Sass, React and Jest
                 </h1>
-            </>
+                <p
+                    style={{
+                        fontSize: "small",
+                        margin: "1em",
+                        textAlign: "center",
+                    }}
+                >
+                    Du bist ein koderz
+                </p>
+            </div>
         );
     }, [Page]);
 }

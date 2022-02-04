@@ -1,15 +1,16 @@
-
-
 .mainMenu {
     list-style: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     display: block;
+    margin: 0;
+    padding: 0;
+
 
     li {
-        margin: 1em 1em;
         display: inline-block;
+        margin-right: 1em;
 
         .navlink, .currentNavlink {
             text-decoration: none;
@@ -17,6 +18,7 @@
             border: 1px solid #111;
             border-radius: 10px;
             padding: 1em 2em;
+            background-color: #fff;
 
             &:hover {
                 border: 1px solid #777;
@@ -37,23 +39,6 @@
     }
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-.home, .alert {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    font-family: sans-serif;
-    font-size: 1em;
-}
-
 .title {
     background-color: #333;
     color: #fff;
@@ -72,8 +57,3 @@ body {
     }
 }
 
-.alert {
-    color: red;
-    font-weight: bold;
-    font-size: 2em;
-}

@@ -12,9 +12,7 @@ export default function Layout({ props, children }) {
                 <Metas />
                 <MainMenu />
             </header>
-            <main className={"container " + styles.home} {...props}>
-                {children}
-            </main>
+            <main {...props}>{children}</main>
         </>
     );
 }
