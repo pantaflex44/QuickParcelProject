@@ -1,6 +1,6 @@
 {
   "name": "quick-parcel-project",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Quick parcel project package",
   "default": "index.html",
   "repository": "https://github.com/pantaflex44/QuickParcelProject",
@@ -59,7 +59,7 @@
     "build:parcel": "NODE_ENV=production parcel build ./src/index.html --public-url ./ --dist-dir ./dist --no-source-maps && node ./postbuild.js",
     "clean": "npm run dev:clean && npm run build:clean",
     "dev": "npm run dev:clean && npm run dev:parcel",
-    "build": "npm run build:clean && npm run build:parcel",
+    "build": "npm run build:clean && npm run build:parcel && cp ./src/.htaccess ./dist/.htaccess",
     "test": "jest",
     "test-watch": "jest --watchAll",
     "serve": "node serve.js"
