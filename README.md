@@ -15,6 +15,8 @@ Create a project with Parcel, Sass, React and Jest quickly.<br />
 
 Simple way, **NPM Package** installation
 
+https://www.npmjs.com/package/quick-parcel-project
+
 ```bash
 npm -y init
 npm -i quick-parcel-project
