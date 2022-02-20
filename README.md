@@ -13,10 +13,28 @@ Create a project with Parcel, Sass, React and Jest quickly.<br />
 
 ## Get QuickParcelProject
 
+Simple way, **NPM Package** installation
+
+```bash
+npm -y init
+npm -i quick-parcel-project
+```
+or **Git clone**
+
 ```bash
 mkdir MyProject
 cd MyProject
 git clone https://github.com/pantaflex44/QuickParcelProject .
+rm -rf .git
+```
+or **Download** project from Github
+
+```bash
+wget https://github.com/pantaflex44/QuickParcelProject/archive/refs/heads/main.zip
+unzip -o main.zip
+mv QuickParcelProject-main MyProject
+rm -rf main.zip
+cd MyProject
 ```
 
 ## Short description
