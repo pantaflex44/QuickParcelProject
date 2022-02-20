@@ -1,9 +1,20 @@
 <IfModule mod_rewrite.c>
-	RewriteEngine on
-	# Don't rewrite files or directories
-	RewriteCond %{REQUEST_FILENAME} -f [OR]
-	RewriteCond %{REQUEST_FILENAME} -d
-	RewriteRule ^ - [L]
-	# Rewrite everything else to index.html to allow html5 state links
-	RewriteRule ^ index.html [L]
+	RewriteEngine On
+	RewriteCond %{REQUEST_URI}::$1 ^(.*?/)(.*)::\2$
+	RewriteRule ^(.*)$ - [E=BASE:%1]
+	RewriteBase /
+	RewriteRule ^index\.html$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-l
+	RewriteRule . %{ENV:BASE}/index.html [L]
+</IfModule>
+
+<IfModule mod_setenvif.c>
+	<IfModule mod_headers.c>
+		<FilesMatch "\.(bmp|cur|gif|ico|jpe?g|png|svgz?|webp)$">
+			SetEnvIf Origin ":" IS_CORS
+			Header set Access-Control-Allow-Origin "*" env=IS_CORS
+		</FilesMatch>
+  	</IfModule>
 </IfModule>
