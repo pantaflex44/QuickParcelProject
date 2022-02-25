@@ -32,10 +32,27 @@ const replacePath = (file, obj, dir) => {
             from: new RegExp(escapeRegExp(name), "g"),
             to: dir + "/" + name,
         };
+
         try {
             let changedFiles = replace.sync(options);
             console.log(
-                "Modified files:",
+                "Modified files (move action):",
+                changedFiles.map((o) => o.file).join(", ")
+            );
+        } catch (error) {
+            console.error("Error occurred:", error);
+        }
+
+        options = {
+            files: path.join(distDir, file),
+            from: new RegExp(escapeRegExp("http://localhost:8080/"), "g"),
+            to: "",
+        };
+
+        try {
+            changedFiles = replace.sync(options);
+            console.log(
+                "Modified files (localhost remover):",
                 changedFiles.map((o) => o.file).join(", ")
             );
         } catch (error) {

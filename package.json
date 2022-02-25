@@ -1,20 +1,13 @@
 {
   "name": "quick-parcel-project",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "description": "Quick parcel project package",
   "default": "index.html",
   "repository": "https://github.com/pantaflex44/QuickParcelProject",
   "author": "Christophe LEMOINE",
   "license": "MIT",
+  "homepage": "/",
   "dependencies": {
-    "@mantine/core": "^3.6.5",
-    "@mantine/dates": "^3.6.5",
-    "@mantine/dropzone": "^3.6.5",
-    "@mantine/hooks": "^3.6.5",
-    "@mantine/modals": "^3.6.5",
-    "@mantine/notifications": "^3.6.5",
-    "@mantine/prism": "^3.6.5",
-    "@mantine/rte": "^3.6.5",
     "connect": "^3.7.0",
     "dayjs": "^1.10.7",
     "parcel": "^2.2.0",
@@ -48,6 +41,7 @@
     "react-icons": "^4.3.1",
     "react-router-transition": "^2.1.0",
     "react-scripts": "^5.0.0",
+    "react-snap": "^1.23.0",
     "react-test-renderer": "^17.0.2",
     "react-transition-group": "^4.4.2",
     "replace-in-file": "^6.3.2"
@@ -56,10 +50,11 @@
     "dev:clean": "rm -rf pre-dist/*",
     "dev:parcel": "NODE_ENV=development parcel ./src/index.html --open --dist-dir ./pre-dist",
     "build:clean": "rm -rf dist/*",
-    "build:parcel": "NODE_ENV=production parcel build ./src/index.html --public-url ./ --dist-dir ./dist --no-source-maps && node ./postbuild.js",
+    "build:parcel": "NODE_ENV=production parcel build ./src/index.html --public-url ./ --dist-dir ./dist --no-source-maps",
     "clean": "npm run dev:clean && npm run build:clean",
     "dev": "npm run dev:clean && npm run dev:parcel",
     "build": "npm run build:clean && npm run build:parcel && cp ./src/.htaccess ./dist/.htaccess",
+    "postbuild": "react-snap && node ./postbuild.js",
     "test": "jest",
     "test-watch": "jest --watchAll",
     "serve": "node serve.js"
@@ -93,5 +88,12 @@
       "\\.(css|less|scss)$": "jest-transform-stub",
       "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "jest-transform-stub"
     }
+  },
+  "reactSnap": {
+    "source": "dist",
+    "port": 8080,
+    "publicPath": "/",
+    "preloadImages": true,
+    "skipThirdPartyRequests": true
   }
 }

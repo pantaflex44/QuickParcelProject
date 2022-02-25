@@ -13,15 +13,7 @@ Create a project with Parcel, Sass, React and Jest quickly.<br />
 
 ## Get QuickParcelProject
 
-Simple way, **NPM Package** installation
-
-https://www.npmjs.com/package/quick-parcel-project
-
-```bash
-npm -y init
-npm -i quick-parcel-project
-```
-or **Git clone**
+Simple way, **Git clone**
 
 ```bash
 mkdir MyProject
@@ -113,7 +105,6 @@ npm run clean
 
 The main entry point is **index.html**.
 
-**main.jsx** and the **src** folder aren't necessary, only for this sample.
 **JSX** extension isn't mandatory, you could use **JS** too.
 
 Free of use!

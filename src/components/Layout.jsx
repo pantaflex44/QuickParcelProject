@@ -1,18 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import * as styles from "../css/App.module.scss";
+import Header from "./Header";
 
-import Metas from "./Metas";
-import MainMenu from "./MainMenu";
-
-export default function Layout({ props, children }) {
+export default function Layout({ children }) {
     return (
         <>
-            <header>
-                <Metas />
-                <MainMenu />
-            </header>
-            <main {...props}>{children}</main>
+            <Header />
+            <main>{children}</main>
         </>
     );
 }

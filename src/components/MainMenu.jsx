@@ -1,17 +1,15 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
-import * as styles from "../css/App.module.scss";
-
 export default function MainMenu() {
     return (
         <nav>
-            <ul className={styles.mainMenu}>
+            <ul>
                 <li>
                     <NavLink
                         to="/"
                         className={({ isActive }) =>
-                            isActive ? styles.currentNavlink : styles.navlink
+                            `nav-link ${isActive ? "active" : "inactive"}`
                         }
                     >
                         Accueil
@@ -21,7 +19,7 @@ export default function MainMenu() {
                     <NavLink
                         to="/about"
                         className={({ isActive }) =>
-                            isActive ? styles.currentNavlink : styles.navlink
+                            `nav-link ${isActive ? "active" : "inactive"}`
                         }
                         end
                     >
