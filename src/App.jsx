@@ -1,5 +1,5 @@
 import React from "react";
-import { render, hydrate } from "react-dom";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
@@ -11,8 +11,7 @@ import About from "./pages/About";
 
 export default function App() {
     const currentLocation = window.location.pathname;
-    const currentPath =
-        currentLocation.substring(0, currentLocation.lastIndexOf("/")) + "/";
+    const currentPath = currentLocation.substring(0, currentLocation.lastIndexOf("/")) + "/";
 
     return (
         <BrowserRouter basename={currentPath}>
@@ -28,9 +27,10 @@ export default function App() {
     );
 }
 
-const appElement = document.getElementById("app");
-if (appElement.hasChildNodes()) {
-    hydrate(<App />, appElement);
+const rootElement = document.getElementById("app");
+if (rootElement.hasChildNodes()) {
+    hydrateRoot(rootElement, <App />);
 } else {
-    render(<App />, appElement);
+    const root = createRoot(rootElement);
+    root.render(<App />);
 }

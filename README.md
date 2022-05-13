@@ -11,6 +11,8 @@
 
 Create a project with Parcel, Sass, React and Jest quickly.<br />
 
+**New in 3.0.0 : React 18 support!**
+
 ## Get QuickParcelProject
 
 Simple way, **Git clone**
