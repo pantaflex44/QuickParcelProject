@@ -1,6 +1,6 @@
 {
     "name": "quick-parcel-project",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "description": "Quick parcel project package",
     "default": "index.html",
     "repository": "https://github.com/pantaflex44/QuickParcelProject",
@@ -8,7 +8,6 @@
     "license": "MIT",
     "homepage": "/",
     "dependencies": {
-        "@parcel/transformer-postcss": "^2.5.0",
         "connect": "^3.7.0",
         "dayjs": "^1.11.2",
         "mkdirp": "^1.0.4",
@@ -29,6 +28,7 @@
         "@babel/preset-react": "^7.16.7",
         "@parcel/babel-preset-env": "^2.5.0",
         "@parcel/transformer-sass": "^2.5.0",
+        "@parcel/transformer-postcss": "^2.5.0",
         "@testing-library/dom": "^8.13.0",
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^13.2.0",
@@ -51,23 +51,19 @@
         "replace-in-file": "^6.3.2"
     },
     "scripts": {
-        "dev:clean": "rm -rf pre-dist/*",
+        "dev:clean": "rm -rf ./pre-dist",
         "dev:parcel": "NODE_ENV=development parcel ./src/index.html --open --dist-dir ./pre-dist",
-        "build:clean": "rm -rf dist/*",
+        "build:clean": "rm -rf ./dist",
         "build:parcel": "NODE_ENV=production parcel build ./src/index.html --public-url ./ --dist-dir ./dist --no-source-maps",
         "clean": "npm run dev:clean && npm run build:clean",
-        "dev": "npm run dev:clean && npm run dev:parcel",
-        "build": "npm run build:clean && npm run build:parcel && cp ./src/.htaccess ./dist/.htaccess",
-        "postbuild": "react-snap && node ./postbuild.js",
+        "dev": "npm run dev:clean && node static-copy.js ./pre-dist && npm run dev:parcel",
+        "build": "npm run build:clean && npm run build:parcel && cp ./src/.htaccess ./dist/.htaccess && node structurize.js && node static-copy.js ./dist",
         "test": "jest",
         "test-watch": "jest --watchAll",
         "serve": "node serve.js"
     },
     "babel": {
-        "presets": [
-            "@parcel/babel-preset-env",
-            "@babel/preset-react"
-        ]
+        "presets": ["@parcel/babel-preset-env", "@babel/preset-react"]
     },
     "jest": {
         "verbose": true,
@@ -77,9 +73,7 @@
         "transform": {
             "^.+\\.jsx?$": "babel-jest"
         },
-        "setupFilesAfterEnv": [
-            "./tests.config.js"
-        ],
+        "setupFilesAfterEnv": ["./tests.config.js"],
         "moduleNameMapper": {
             "\\.(css|less|scss)$": "jest-transform-stub",
             "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "jest-transform-stub"

@@ -7,6 +7,10 @@ const baseDir = "./";
 const parentDir = "../";
 const distDir = "dist";
 
+if (!fs.existsSync(path.join(__dirname, baseDir, distDir))) {
+    fs.mkdirSync(path.join(__dirname, baseDir, distDir));
+}
+
 const cssDir = "css";
 if (!fs.existsSync(path.join(__dirname, baseDir, distDir, cssDir))) {
     fs.mkdirSync(path.join(__dirname, baseDir, distDir, cssDir));
@@ -22,23 +26,17 @@ if (!fs.existsSync(path.join(__dirname, baseDir, distDir, assetsDir))) {
     fs.mkdirSync(path.join(__dirname, baseDir, distDir, assetsDir));
 }
 
-console.log("Structurize dist folder...");
-console.log("");
-
 const replacePath = (file, obj, dir) => {
     obj.forEach((name) => {
         let options = {
             files: path.join(distDir, file),
             from: new RegExp(escapeRegExp(name), "g"),
-            to: dir + "/" + name,
+            to: dir + "/" + name
         };
 
         try {
             let changedFiles = replace.sync(options);
-            console.log(
-                "Modified files (move action):",
-                changedFiles.map((o) => o.file).join(", ")
-            );
+            console.log("Modified files (move action):", changedFiles.map((o) => o.file).join(", "));
         } catch (error) {
             console.error("Error occurred:", error);
         }
@@ -46,15 +44,12 @@ const replacePath = (file, obj, dir) => {
         options = {
             files: path.join(distDir, file),
             from: new RegExp(escapeRegExp("http://localhost:8080/"), "g"),
-            to: "",
+            to: ""
         };
 
         try {
             changedFiles = replace.sync(options);
-            console.log(
-                "Modified files (localhost remover):",
-                changedFiles.map((o) => o.file).join(", ")
-            );
+            console.log("Modified files (localhost remover):", changedFiles.map((o) => o.file).join(", "));
         } catch (error) {
             console.error("Error occurred:", error);
         }
@@ -63,16 +58,16 @@ const replacePath = (file, obj, dir) => {
 
 const moveFile = (obj, dir) => {
     obj.forEach((name) => {
-        fs.rename(
-            path.join(__dirname, distDir, name),
-            path.join(__dirname, distDir, dir, name),
-            function (err) {
-                if (err) throw err;
-                console.log(`Successfully moved ${name}`);
-            }
-        );
+        fs.rename(path.join(__dirname, distDir, name), path.join(__dirname, distDir, dir, name), function (err) {
+            if (err) throw err;
+            console.log(`Successfully moved: ${name}`);
+        });
     });
 };
+
+console.log("");
+console.log("Structurize dist folder...");
+console.log("");
 
 fs.readdir(`./${distDir}`, (err, files) => {
     let html = [];
