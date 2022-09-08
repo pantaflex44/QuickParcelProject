@@ -11,7 +11,36 @@
 
 Create a project with Parcel, Sass, React and Jest quickly.<br />
 
-**New in 3.0.0 : React 18 support!**
+
+**Actual: 3.1.2 : React 18.0.2 support!**
+```bash
+ dayjs                         ^1.11.2  →  ^1.11.5
+ parcel                         ^2.5.0  →   ^2.7.0
+ puppeteer                     ^14.1.0  →  ^17.1.2
+ react                         ^18.1.0  →  ^18.2.0
+ react-dom                     ^18.1.0  →  ^18.2.0
+ sass                          ^1.51.0  →  ^1.54.9
+ @babel/core                  ^7.17.10  →  ^7.19.0
+ @babel/preset-env            ^7.17.10  →  ^7.19.0
+ @babel/preset-react           ^7.16.7  →  ^7.18.6
+ @parcel/babel-preset-env       ^2.5.0  →   ^2.7.0
+ @parcel/transformer-postcss    ^2.5.0  →   ^2.7.0
+ @parcel/transformer-sass       ^2.5.0  →   ^2.7.0
+ @testing-library/dom          ^8.13.0  →  ^8.17.1
+ @testing-library/jest-dom     ^5.16.4  →  ^5.16.5
+ @testing-library/react        ^13.2.0  →  ^13.4.0
+ @types/jest                   ^27.5.1  →  ^29.0.0
+ autoprefixer                  ^10.4.7  →  ^10.4.8
+ babel-jest                    ^28.1.0  →  ^29.0.2
+ eslint-plugin-react-hooks      ^4.5.0  →   ^4.6.0
+ helmet                         ^5.0.2  →   ^6.0.0
+ jest                          ^28.1.0  →  ^29.0.2
+ react-icons                    ^4.3.1  →   ^4.4.0
+ react-test-renderer           ^18.1.0  →  ^18.2.0
+ react-transition-group         ^4.4.2  →   ^4.4.5
+ replace-in-file                ^6.3.2  →   ^6.3.5
+```
+
 
 ## Get QuickParcelProject
 
