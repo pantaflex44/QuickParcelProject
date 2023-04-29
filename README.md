@@ -12,7 +12,33 @@
 Create a project with Parcel, Sass, React and Jest quickly.<br />
 
 
-**Actual: 3.1.2 : React 18.0.2 support!**
+**Actual: 3.1.3 : Mises à jour des paquets suivants**
+```bash
+@babel/core                  ^7.19.0  →   ^7.21.5
+@babel/preset-env            ^7.19.0  →   ^7.21.5
+@parcel/babel-preset-env      ^2.7.0  →    ^2.8.3
+@parcel/transformer-postcss   ^2.7.0  →    ^2.8.3
+@parcel/transformer-sass      ^2.7.0  →    ^2.8.3
+@testing-library/dom         ^8.17.1  →    ^9.2.0
+@testing-library/react       ^13.4.0  →   ^14.0.0
+@types/jest                  ^29.0.0  →   ^29.5.1
+autoprefixer                 ^10.4.8  →  ^10.4.14
+babel-jest                   ^29.0.2  →   ^29.5.0
+dayjs                        ^1.11.5  →   ^1.11.7
+helmet                        ^6.0.0  →    ^6.1.5
+jest                         ^29.0.2  →   ^29.5.0
+mkdirp                        ^1.0.4  →    ^3.0.1
+parcel                        ^2.7.0  →    ^2.8.3
+puppeteer                    ^17.1.2  →  ^19.11.1
+react-icons                   ^4.4.0  →    ^4.8.0
+react-router-dom              ^6.3.0  →   ^6.11.0
+redux                         ^4.2.0  →    ^4.2.1
+sass                         ^1.54.9  →   ^1.62.1
+svgo                          ^2.8.0  →    ^3.0.2
+```
+
+
+**Version 3.1.2 : React 18.0.2 support!**
 ```bash
  dayjs                         ^1.11.2  →  ^1.11.5
  parcel                         ^2.5.0  →   ^2.7.0
